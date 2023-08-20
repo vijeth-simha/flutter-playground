@@ -9,10 +9,16 @@ void main() => runApp(MaterialApp(
           centerTitle: true,
         ),
         body: const Center(
-          child: Text("Hey Flutter"),
+          child: Text(
+            "Hey Flutter",
+            style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.amber),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
-          child: const Text("Hi"),
+          child: const Text("Click"),
           onPressed: () {
             debugPrint('Hello Vijeth sdsdi!');
           },

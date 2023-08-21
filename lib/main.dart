@@ -12,12 +12,9 @@ class Home extends StatelessWidget {
         title: const Text("Appbar"),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          "Hey Stateless widget",
-          style: TextStyle(
-              fontSize: 20.0, fontWeight: FontWeight.bold, color: Colors.amber),
-        ),
+      body: Center(
+        child: Image.network(
+            'https://assets.thehansindia.com/h-upload/2020/10/11/1004990-ksrtc.webp'),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Text("+"),

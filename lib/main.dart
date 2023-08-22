@@ -12,13 +12,11 @@ class Home extends StatelessWidget {
         title: const Text("Appbar"),
         centerTitle: true,
       ),
-      body: Center(
-          child: ElevatedButton(
-        child: const Text("sdc"),
-        onPressed: () {
-          debugPrint('Hello from button click!!!');
-        },
-      )),
+      body: Container(
+        padding: const EdgeInsets.all(20.0),
+        color: Colors.amber,
+        // child: const Text("hhii"),
+      ),
       floatingActionButton: FloatingActionButton(
         child: const Text("+"),
         onPressed: () {

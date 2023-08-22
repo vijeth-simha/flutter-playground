@@ -12,10 +12,20 @@ class Home extends StatelessWidget {
         title: const Text("Appbar"),
         centerTitle: true,
       ),
-      body: Container(
-        padding: const EdgeInsets.all(20.0),
-        color: Colors.amber,
-        // child: const Text("hhii"),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(20.0),
+            color: Colors.amber,
+            child: const Text("hhii"),
+          ),
+          const Text('Row 1'),
+          const Text('Row 2'),
+          const Text('Row 3'),
+          const Text('Row 4'),
+          const Text('Row 5'),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: const Text("+"),

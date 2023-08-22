@@ -13,12 +13,9 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-          child: ElevatedButton(
-        child: const Text("sdc"),
-        onPressed: () {
-          debugPrint('Hello from button click!!!');
-        },
-      )),
+        child: Image.network(
+            'https://assets.thehansindia.com/h-upload/2020/10/11/1004990-ksrtc.webp'),
+      ),
       floatingActionButton: FloatingActionButton(
         child: const Text("+"),
         onPressed: () {

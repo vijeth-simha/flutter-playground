@@ -12,15 +12,14 @@ class Home extends StatelessWidget {
         title: const Text("Appbar"),
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: Row(
         children: [
+          const Expanded(child: Text('Row 1')),
           Container(
             padding: const EdgeInsets.all(20.0),
             color: Colors.amber,
-            child: const Text("hhii"),
+            child: const Text("Hey flutter"),
           ),
-          const Text('Row 1'),
           const Text('Row 2'),
           const Text('Row 3'),
           const Text('Row 4'),

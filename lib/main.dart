@@ -10,33 +10,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int counter = 0;
+  List<String> quotes = ['Hellow', 'Hellow', 'Hellow'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        title: const Text("Appbar"),
+        title: const Text("Quotes List"),
         centerTitle: true,
+        backgroundColor: Colors.redAccent,
       ),
-      body: Row(
-        children: [
-          Expanded(child: Text('$counter')),
-          Container(
-            padding: const EdgeInsets.all(20.0),
-            color: Colors.amber,
-            child: const Text("Hey flutter"),
-          ),
-          const Text('Row 2'),
-          const Text('Row 3'),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          setState(() {
-            counter += 1;
-          });
-        },
+      body: Column(
+        children: quotes.map((e) => Text(e)).toList(),
       ),
     );
   }

@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const MaterialApp(home: Home()));
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +20,7 @@ class Home extends StatelessWidget {
       ),
       body: Row(
         children: [
-          const Expanded(child: Text('Row 1')),
+          Expanded(child: Text('$counter')),
           Container(
             padding: const EdgeInsets.all(20.0),
             color: Colors.amber,
@@ -22,14 +28,15 @@ class Home extends StatelessWidget {
           ),
           const Text('Row 2'),
           const Text('Row 3'),
-          const Text('Row 4'),
-          const Text('Row 5'),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Text("+"),
+        child: const Icon(Icons.add),
         onPressed: () {
           debugPrint('Hello Vijeth!!!');
+          setState(() {
+            counter += 1;
+          });
         },
       ),
     );

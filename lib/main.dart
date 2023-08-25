@@ -15,6 +15,26 @@ class _HomeState extends State<Home> {
     Quote(author: 'author', text: 'text'),
     Quote(author: 'author', text: 'text')
   ];
+
+  Widget quoteTemplate(Quote quote) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Column(
+          children: [
+            Text(
+              quote.author,
+              style: const TextStyle(fontSize: 20.0, color: Colors.green),
+            ),
+            const SizedBox(
+              height: 6.0,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +45,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((e) => Text('${e.author}- ${e.text}')).toList(),
+        children: quotes.map((quote) => quoteTemplate(quote)).toList(),
       ),
     );
   }

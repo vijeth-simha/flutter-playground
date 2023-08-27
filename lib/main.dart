@@ -4,7 +4,7 @@ import 'package:flutter_playground/pages/loading.dart';
 import 'pages/home.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/home',
+      initialRoute: '/',
       routes: {
         '/': (context) => const Loading(),
         '/home': (context) => const Home(),

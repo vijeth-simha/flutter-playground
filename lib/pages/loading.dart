@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
+import 'package:flutter_playground/services/api_service.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -11,9 +9,15 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+  getPost() async {
+    Post posts = Post();
+    await posts.getPosts();
+  }
+
   @override
   void initState() {
     super.initState();
+    getPost();
   }
 
   @override

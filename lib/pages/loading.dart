@@ -11,17 +11,9 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  void getData() async {
-    Response response =
-        await get(Uri.https('jsonplaceholder.typicode.com', '/posts/78'));
-    Map data = jsonDecode(response.body);
-    print(data['id']);
-  }
-
   @override
   void initState() {
     super.initState();
-    getData();
   }
 
   @override

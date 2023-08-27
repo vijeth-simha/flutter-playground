@@ -14,7 +14,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   List<Quote> quotes = [
     Quote(author: 'Vijeth', text: 'text'),
-    Quote(author: 'Darshan', text: 'textest')
+    Quote(author: 'Darshan', text: 'textest'),
+    Quote(author: 'Vinay', text: 'textest'),
+    Quote(author: 'Vishal', text: 'textest'),
   ];
 
   @override
@@ -27,7 +29,16 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.redAccent,
       ),
       body: Column(
-        children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+        children: quotes
+            .map((quote) => QuoteCard(
+                  quote: quote,
+                  delete: () {
+                    setState(() {
+                      quotes.remove(quote);
+                    });
+                  },
+                ))
+            .toList(),
       ),
     );
   }

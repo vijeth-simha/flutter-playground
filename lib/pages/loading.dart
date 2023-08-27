@@ -9,9 +9,13 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+  int userId = 0;
   getPost() async {
     Post posts = Post();
     await posts.getPosts();
+    setState(() {
+      userId = posts.finalData["userId"];
+    });
   }
 
   @override
@@ -22,8 +26,11 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Loading screen'),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(50.0),
+        child: Text('$userId'),
+      ),
     );
   }
 }

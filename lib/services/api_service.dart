@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 
@@ -7,10 +10,12 @@ class Post {
   Post();
 
   Future<void> getPosts() async {
-    Response response =
-        await get(Uri.https('jsonplaceholder.typicode.com', '/posts/78'));
-    Map data = jsonDecode(response.body);
+    try {
+      Response response =
+          await get(Uri.https('jsonplaceholder.typicode.com', '/posts/78'));
+      Map data = jsonDecode(response.body);
 
-    finalData = data;
+      finalData = data;
+    } catch (e) {}
   }
 }

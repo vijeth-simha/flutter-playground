@@ -9,13 +9,13 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  int userId = 0;
   getPost() async {
     Post posts = Post();
     await posts.getPosts();
-    setState(() {
-      userId = posts.finalData["userId"];
-    });
+    if (mounted) {
+      Navigator.pushNamed(context, '/home',
+          arguments: {'finalData': posts.finalData});
+    }
   }
 
   @override
@@ -26,10 +26,10 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(50.0),
-        child: Text('$userId'),
+        child: Text('Loading...'),
       ),
     );
   }

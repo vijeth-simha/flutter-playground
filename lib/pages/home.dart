@@ -8,10 +8,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Map data = {};
+  List data = [];
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context)?.settings.arguments as Map;
+    data = ModalRoute.of(context)?.settings.arguments as List;
     return SafeArea(
       child: Container(
         decoration: const BoxDecoration(
@@ -21,7 +21,8 @@ class _HomeState extends State<Home> {
           children: [
             FlatButton.icon(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/location');
+                  Navigator.pushNamed(context, '/location',
+                      arguments: {'finalData': data});
                 },
                 icon: const Icon(
                   Icons.edit_location,

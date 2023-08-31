@@ -14,7 +14,9 @@ class _HomeState extends State<Home> {
     data = ModalRoute.of(context)?.settings.arguments as Map;
     return SafeArea(
       child: Container(
-        color: Colors.white,
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/eg1.jpg'), fit: BoxFit.cover)),
         child: Column(
           children: [
             FlatButton.icon(

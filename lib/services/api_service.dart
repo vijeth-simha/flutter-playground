@@ -1,11 +1,10 @@
 import 'dart:developer';
-
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
+import 'package:flutter_playground/interfaces/post.dart';
 
 class Post {
-  late List finalData;
+  Map finalData = {};
 
   Post();
 
@@ -13,8 +12,7 @@ class Post {
     try {
       Response response =
           await get(Uri.https('jsonplaceholder.typicode.com', '/posts'));
-      List data = jsonDecode(response.body);
-
+      Map data = jsonDecode(response.body);
       finalData = data;
     } catch (e) {}
   }

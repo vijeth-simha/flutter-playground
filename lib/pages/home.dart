@@ -8,10 +8,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List data = [];
+  List<dynamic> data = [];
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context)?.settings.arguments as List;
+    data = ModalRoute.of(context)?.settings.arguments as List<dynamic>;
     return SafeArea(
       child: Container(
         decoration: const BoxDecoration(

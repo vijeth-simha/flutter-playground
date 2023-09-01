@@ -12,11 +12,11 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   final posts = Post();
   getPost() async {
-    List<dynamic> finalData = await posts.getPosts();
+    await posts.getPosts();
     // print(finalData);
     if (mounted) {
       Navigator.pushNamed(context, '/home',
-          arguments: {'finalData': finalData});
+          arguments: {'finalData': posts.finalData});
     }
   }
 

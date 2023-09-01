@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_playground/interfaces/post.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

@@ -9,4 +9,13 @@ class PostSchema {
       required this.id,
       required this.title,
       required this.body});
+
+  factory PostSchema.fromJson(Map<String, dynamic> json) {
+    return PostSchema(
+      id: json['id'] ?? 0,
+      userId: json['userId'] ?? 0,
+      title: json['title'] ?? '',
+      body: json['body'] ?? '',
+    );
+  }
 }

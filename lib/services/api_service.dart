@@ -4,22 +4,16 @@ import 'dart:convert';
 import 'package:flutter_playground/interfaces/post.dart';
 
 class Post {
-  List<dynamic> finalData = [];
+  List<PostSchema> finalData = [];
 
-  Future<List<dynamic>> getPosts() async {
+  Future<void> getPosts() async {
     try {
       Response response =
           await get(Uri.https('jsonplaceholder.typicode.com', '/posts'));
       if (response.statusCode == 200) {
         final List<dynamic> responseData = json.decode(response.body);
-        // final List<dynamic> posts = responseData;
-        // print(responseData);
-        return responseData;
-        // if (posts != null && posts is List<dynamic>) {
-        //   return posts;
-        // } else {
-        //   throw Exception('Invalid response format');
-        // }
+        finalData =
+            responseData.map((json) => PostSchema.fromJson(json)).toList();
       } else {
         throw Exception('Failed to load posts');
       }

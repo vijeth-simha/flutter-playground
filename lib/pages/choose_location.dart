@@ -8,11 +8,12 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-  List<dynamic> data = [];
+  Map<String, dynamic> data = {};
 
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context)?.settings.arguments as List<dynamic>;
+    data = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+    print(data['finalData']);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Location'),

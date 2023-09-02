@@ -15,6 +15,10 @@ class _ChooseLocationState extends State<ChooseLocation> {
   Widget build(BuildContext context) {
     data = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
     posts = data['finalData'];
+    updateTitle(index) {
+      Navigator.pop(context, {'title': posts[index].title});
+    }
+
     return Scaffold(
         appBar: AppBar(
           title: const Text('Location'),
@@ -29,7 +33,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
             child: Card(
               child: ListTile(
                 onTap: () {
-                  print(posts[index]);
+                  updateTitle(index);
                 },
                 title: Text(posts[index].title),
               ),

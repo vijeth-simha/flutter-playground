@@ -8,11 +8,24 @@ class Forms extends StatefulWidget {
 }
 
 class _FormsState extends State<Forms> {
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Form(
-        child: Column(
-      children: [Text("dsds")],
-    ));
+    return Scaffold(
+      appBar: AppBar(title: const Text("Form")),
+      body: Container(
+        child: Form(
+            key: formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextFormField(
+                  decoration:
+                      const InputDecoration(labelText: "Enter your name"),
+                )
+              ],
+            )),
+      ),
+    );
   }
 }

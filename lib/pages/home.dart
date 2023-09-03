@@ -43,6 +43,17 @@ class _HomeState extends State<Home> {
                     'edit location',
                     style: TextStyle(fontSize: 15.0),
                   )),
+              FlatButton.icon(
+                  onPressed: () async {
+                    Navigator.pushNamed(context, '/forms');
+                  },
+                  icon: const Icon(
+                    Icons.dynamic_form,
+                  ),
+                  label: const Text(
+                    'Forms',
+                    style: TextStyle(fontSize: 15.0),
+                  )),
               Text(
                 title,
                 style:

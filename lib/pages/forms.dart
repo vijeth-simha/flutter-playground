@@ -24,8 +24,7 @@ class _FormsState extends State<Forms> {
                   decoration:
                       const InputDecoration(labelText: "Enter your name"),
                   validator: (value) {
-                    if (value!.isNotEmpty ||
-                        !RegExp(r'/^[A-Za-z]+$/').hasMatch(value!)) {
+                    if (value!.isEmpty || !RegExp('[a-zA-Z]').hasMatch(value)) {
                       return "Enter the name correctly";
                     } else {
                       return null;
@@ -36,8 +35,8 @@ class _FormsState extends State<Forms> {
                   decoration:
                       const InputDecoration(labelText: "Enter your email"),
                   validator: (value) {
-                    if (value!.isNotEmpty ||
-                        !RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                    if (value!.isEmpty ||
+                        !RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
                             .hasMatch(value)) {
                       return "Enter the email correctly";
                     } else {
@@ -47,7 +46,7 @@ class _FormsState extends State<Forms> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      print(formKey.currentState);
+                      print(formKey.currentContext);
                       if (formKey.currentState!.validate()) {}
                     },
                     child: const Text("Submit"))

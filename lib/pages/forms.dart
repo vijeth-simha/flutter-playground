@@ -50,8 +50,9 @@ class _FormsState extends State<Forms> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      print(formKey.currentContext);
-                      if (formKey.currentState!.validate()) {}
+                      print(nameController.text);
+                      print(emailController.text);
+                      // if (formKey.currentState!.validate()) {}
                     },
                     child: const Text("Submit"))
               ],

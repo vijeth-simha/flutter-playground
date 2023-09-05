@@ -9,6 +9,8 @@ class Forms extends StatefulWidget {
 
 class _FormsState extends State<Forms> {
   final formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +25,7 @@ class _FormsState extends State<Forms> {
                 TextFormField(
                   decoration:
                       const InputDecoration(labelText: "Enter your name"),
+                  controller: nameController,
                   validator: (value) {
                     if (value!.isEmpty || !RegExp('[a-zA-Z]').hasMatch(value)) {
                       return "Enter the name correctly";
@@ -34,6 +37,7 @@ class _FormsState extends State<Forms> {
                 TextFormField(
                   decoration:
                       const InputDecoration(labelText: "Enter your email"),
+                  controller: emailController,
                   validator: (value) {
                     if (value!.isEmpty ||
                         !RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')

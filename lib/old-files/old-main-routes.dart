@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_playground/pages/choose_location.dart';
 import 'package:flutter_playground/pages/forms.dart';
 import 'package:flutter_playground/pages/loading.dart';
-import 'pages/home.dart';
+import '../pages/home.dart';
 
 void main() => runApp(MaterialApp(
       initialRoute: '/',

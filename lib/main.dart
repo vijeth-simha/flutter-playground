@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final helloWorldProvider = StateProvider((ref) => "Vijeth Simha");
+final helloWorldProvider = StateProvider((ref) => 0);
 void main() {
   runApp(
     // For widgets to be able to read providers, we need to wrap the entire
@@ -18,13 +18,19 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final String value = ref.watch(helloWorldProvider);
+    int value = ref.watch(helloWorldProvider);
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Example')),
         body: Center(
-          child: Text(value),
+          child: Text('$value'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            ref.read(helloWorldProvider.notifier).state++;
+          },
         ),
       ),
     );
